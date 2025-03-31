@@ -16,7 +16,7 @@ IFSX_AUTH_TOKEN = os.getenv("IFSX_AUTH_TOKEN")
 #ioc.exchange
 IOCX_AUTH_TOKEN = os.getenv("IOCX_AUTH_TOKEN")
 
-GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+GITHUB_TOKEN = os.getenv("ITHUB_TOKEN")
 
 TESTMODE = os.getenv("TESTMODE") # for dev only
 
