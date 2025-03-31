@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>FediSecfeeds</title>
+	<title>DDL</title>
 	## <script type="module" src="js/md-block.js"></script>
 	<style type="text/css">
 	
@@ -191,7 +191,6 @@
 <body>
 Updated at UTC {{ updated }}
 
-<p><a target=_blank href=https://github.com/fedisecfeeds/fedisecfeeds.github.io/blob/main/fedi_cve_feed.json>Access data as JSON</a></p>
 
 <p><input id=filterbox onkeypress="filterPress(event)" placeholder="keyword / year / .."> <button id=filterbutton onclick="filterBugs()">filter</button></p>
 
@@ -310,10 +309,6 @@ Updated at UTC {{ updated }}
 {% endfor %}
 
 </section>
-<!-- hitwebcounter Code START -->
-<a href="https://www.hitwebcounter.com" target="_blank">
-<img src="https://hitwebcounter.com/counter/counter.php?page=9752729&style=0010&nbdigits=5&type=ip&initCount=0" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a> 
-
 <script>
 
 // change placeholder by year number
