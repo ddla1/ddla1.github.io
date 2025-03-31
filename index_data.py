@@ -259,7 +259,7 @@ def main():
 
 	# get posts by statuses (toots) search
 	post_search_results = []
-	post_search_results.extend(filter_posts(search_poll("https://infosec.exchange", "CVE-", search_type="statuses", auth_token=IFSX_AUTH_TOKEN, last_days=last_days)))
+	#post_search_results.extend(filter_posts(search_poll("https://infosec.exchange", "CVE-", search_type="statuses", auth_token=IFSX_AUTH_TOKEN, last_days=last_days)))
 	post_search_results.extend(filter_posts(search_poll("https://ioc.exchange", "CVE-", search_type="statuses", auth_token=IOCX_AUTH_TOKEN, last_days=last_days)))
 	for result in post_search_results:
 		cves = re.findall(CVE_PATTERN, result["content"])
