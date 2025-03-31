@@ -445,7 +445,7 @@ def main():
 	outfile = 'fedi_cve_feed.json'
 	with open(outfile, 'w+') as f:
 		filtered_fedi_cve_feed = {cve: data for cve, data in fedi_cve_feed.items() if data['cvss3'] >= 6}
-		json.dump(filtered_fedi_cve_feed, f, indent=2)
+		json.dump(cve, f, indent=2)
 
 	from renderer import render
 	render(outfile)
