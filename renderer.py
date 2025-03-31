@@ -26,4 +26,4 @@ def render(jsonblob):
 	print('rendered to index.html')
 
 if __name__ == "__main__":
-	render('fedi_cve_feed.json')
+	render('cve.json')
