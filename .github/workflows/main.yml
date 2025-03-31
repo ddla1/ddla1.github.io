@@ -1,44 +1,44 @@
-name: Fetch data and update site
-on:
-  push:
-  workflow_dispatch:
-  schedule:
-    - cron:  '20 */2 * * *'
+# name: Fetch data and update site
+# on:
+#   push:
+#   workflow_dispatch:
+#   schedule:
+#     - cron:  '20 */2 * * *'
 
 
-jobs:
-  update_site:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
+# jobs:
+#   update_site:
+#     runs-on: ubuntu-latest
+#     permissions:
+#       contents: write
 
-    steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
-        cache: 'pip'
+#     steps:
+#     - uses: actions/checkout@v3
+#     - uses: actions/setup-python@v4
+#       with:
+#         python-version: '3.10'
+#         cache: 'pip'
 
-    - run: pip3 install -r requirements.txt
+#     - run: pip3 install -r requirements.txt
 
-    - run: rm index.html #cve.json
+#     - run: rm index.html #cve.json
 
-    - run: python3 index_data.py
-      env:
-        IFSX_AUTH_TOKEN: ${{ secrets.IFSX_AUTH_TOKEN }}
-        IOCX_AUTH_TOKEN: ${{ secrets.IOCX_AUTH_TOKEN }}
-        ITHUB_TOKEN: ${{ secrets.ITHUB_TOKEN }}
+#     - run: python3 index_data.py
+#       env:
+#         IFSX_AUTH_TOKEN: ${{ secrets.IFSX_AUTH_TOKEN }}
+#         IOCX_AUTH_TOKEN: ${{ secrets.IOCX_AUTH_TOKEN }}
+#         ITHUB_TOKEN: ${{ secrets.ITHUB_TOKEN }}
 
-    - name: Push new data to site
-      run: | 
+#     - name: Push new data to site
+#       run: | 
 
-        git config --global user.name 'ddl bot'
-        git config --global user.email 'ddl-bot@localhost'
-        git config --global branch.autoSetupMerge always
-        git config --global core.mergeoptions --no-edit
-        git config --global pull.rebase false
+#         git config --global user.name 'ddl bot'
+#         git config --global user.email 'ddl-bot@localhost'
+#         git config --global branch.autoSetupMerge always
+#         git config --global core.mergeoptions --no-edit
+#         git config --global pull.rebase false
 
-        git add index.html cve.json
-        git commit -m "site update"
-        git pull
-        git push 
+#         git add index.html cve.json
+#         git commit -m "site update"
+#         git pull
+#         git push 
