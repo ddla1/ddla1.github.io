@@ -21,13 +21,13 @@ jobs:
 
     - run: pip3 install -r requirements.txt
 
-    - run: rm index.html fedi_cve_feed.json
+    - run: rm index.html #cve.json
 
     - run: python3 index_data.py
       env:
         IFSX_AUTH_TOKEN: ${{ secrets.IFSX_AUTH_TOKEN }}
         IOCX_AUTH_TOKEN: ${{ secrets.IOCX_AUTH_TOKEN }}
-        GITHUB_TOKEN: ${{ secrets.ithub.token }}
+        ITHUB_TOKEN: ${{ secrets.ITHUB_TOKEN }}
 
     - name: Push new data to site
       run: | 
